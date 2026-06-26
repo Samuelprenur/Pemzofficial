@@ -3,925 +3,405 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ecom Sam — Shopify store design, Klaviyo email marketing, and automation for eCommerce brands. Professional setup starting from $400.">
-<title>Ecom Sam | Shopify Store Design & Email Marketing</title>
+<title>Pemz Official Agency — Branding, Shopify & Growth</title>
+<meta name="description" content="Pemz Official Agency: brand identity, Shopify stores, websites and marketing that actually sell. Black and gold. Built on trust.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root{
+    --bg:#0A0A0A;
+    --card:#121212;
+    --card-border:#221E1C;
+    --gold:#D4AF37;
+    --gold-light:#F1C75B;
+    --text:#EDEDED;
+    --muted:#8C8C8C;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter', Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
 
-  :root {
-    --ink: #0f0e0d;
-    --paper: #f7f4ef;
-    --accent: #c8622a;
-    --accent-light: #f0e0d4;
-    --muted: #7a7570;
-    --border: #e2ddd8;
-    --white: #ffffff;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* PREMIUM SCROLL ANIMATION EFFECTS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  html { scroll-behavior: smooth; }
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(10,10,10,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(212,175,55,0.12);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;max-width:1100px;margin:0 auto;}
+  .logo{font-family:var(--serif);font-weight:600;font-size:1.4rem;letter-spacing:1px;color:var(--gold);line-height:1;}
+  .logo span{color:var(--text);font-weight:500;font-size:0.7rem;letter-spacing:3px;display:block;color:var(--muted);margin-top:4px;}
+  .nav-links{display:flex;gap:36px;font-size:0.85rem;letter-spacing:0.8px;text-transform:uppercase;}
+  .nav-links a{color:var(--muted);transition:color .25s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{
+    background:var(--gold);color:#0A0A0A;padding:11px 22px;border-radius:2px;
+    font-size:0.8rem;font-weight:600;letter-spacing:0.5px;transition:all .25s;
+  }
+  .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+  .menu-toggle{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer;}
 
-  body {
-    font-family: var(--sans);
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.6;
-    overflow-x: hidden;
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding:160px 0 100px;
+    position:relative;
+    overflow:hidden;
   }
-
-  /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 5%;
-    background: rgba(247,244,239,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 75% 30%, rgba(212,175,55,0.06), transparent 60%);
+    pointer-events:none;
   }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: 0.01em;
+  .hero-inner{position:relative;z-index:1;max-width:740px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:12px;
+    font-size:0.75rem;letter-spacing:3px;color:var(--gold);
+    margin-bottom:28px;text-transform:uppercase;font-weight:500;
   }
-  .nav-logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 0.875rem;
+  .eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+  h1{
+    font-family:var(--serif);font-size:3.8rem;font-weight:500;line-height:1.15;
+    color:var(--text);margin-bottom:24px;
+  }
+  h1 em {
+    color:var(--gold);
+    font-style:italic;
+  }
+  .hero p.lead{
+    font-size:1.1rem;color:var(--muted);max-width:560px;margin-bottom:40px;
     font-weight: 400;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-cta {
-    background: var(--ink);
-    color: var(--white) !important;
-    padding: 0.55rem 1.3rem;
-    border-radius: 2px;
+  .btn-row{display:flex;gap:18px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 32px;border-radius:2px;font-size:0.9rem;font-weight:600;
+    letter-spacing:0.5px;transition:all .25s;
   }
-  .nav-cta:hover { background: var(--accent); color: var(--white) !important; }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-  .hamburger span { width: 24px; height: 1.5px; background: var(--ink); display: block; transition: all 0.3s; }
+  .btn-primary{background:var(--gold);color:#0A0A0A;}
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow: 0 4px 20px rgba(212,175,55,0.15);}
+  .btn-ghost{border:1px solid rgba(212,175,55,0.3);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px);}
 
-  /* ─── HERO ─── */
-  .hero {
-    min-height: 100vh;
-    padding: 8rem 5% 5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+  /* DIVIDER */
+  .divider{
+    display:flex;align-items:center;justify-content:center;gap:16px;
+    padding:20px 0;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -10%; right: -5%;
-    width: 55%; height: 80%;
-    background: radial-gradient(ellipse at center, #e8d5c4 0%, transparent 70%);
-    pointer-events: none;
-    opacity: 0.6;
-  }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block;
-    width: 28px; height: 1px; background: var(--accent);
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(3rem, 5vw, 5.5rem);
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-  }
-  .hero h1 em { font-style: italic; color: var(--accent); }
-  .hero-sub {
-    font-size: 1.05rem;
-    color: var(--muted);
-    max-width: 440px;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    line-height: 1.8;
-  }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-block;
-    background: var(--ink); color: var(--white);
-    padding: 0.85rem 2rem;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: background 0.25s, transform 0.2s;
-  }
-  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid var(--ink);
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
-  .hero-visual {
-    position: relative;
-    display: flex; justify-content: center; align-items: center;
-  }
-  .hero-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 380px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-    position: relative;
-    animation: float 6s ease-in-out infinite;
-  }
-  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-  .hero-card-tag {
-    font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-  .hero-card-title {
-    font-family: var(--serif);
-    font-size: 1.4rem; font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .hero-card-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
-  .hero-card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .stat { background: var(--paper); padding: 0.8rem; border-radius: 2px; }
-  .stat-num {
-    font-family: var(--serif);
-    font-size: 1.8rem; font-weight: 600;
-    color: var(--ink); line-height: 1;
-  }
-  .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
-  .hero-badge {
-    position: absolute;
-    bottom: -1rem; right: -1rem;
-    background: var(--accent);
-    color: var(--white);
-    padding: 0.6rem 1rem;
-    font-size: 0.75rem; font-weight: 500;
-    border-radius: 2px;
-    letter-spacing: 0.04em;
-  }
-  .scroll-hint {
-    position: absolute; bottom: 2rem; left: 50%;
-    transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
-  }
-  .scroll-line { width: 1px; height: 40px; background: var(--muted); animation: scrollDown 2s ease-in-out infinite; }
-  @keyframes scrollDown { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
-
-  /* ─── SECTIONS SHARED ─── */
-  section { padding: 6rem 5%; }
-  .section-label {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 1rem;
-  }
-  .section-label::before { content:''; width:20px; height:1px; background:var(--accent); }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 3.5vw, 3.2rem);
-    font-weight: 500; line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; font-weight: 300; line-height: 1.8; }
-
-  /* ─── SERVICES ─── */
-  #services { background: var(--white); }
-  .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); }
-  .service-card {
-    background: var(--white);
-    padding: 2.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-  }
-  .service-card::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px;
-    background: var(--accent);
-    transition: width 0.4s ease;
-  }
-  .service-card:hover::after { width: 100%; }
-  .service-card:hover { background: #fdfcfb; }
-  .service-num {
-    font-family: var(--serif);
-    font-size: 3rem; font-weight: 400;
-    color: var(--border); line-height: 1;
-    margin-bottom: 1rem;
-    transition: color 0.3s;
-  }
-  .service-card:hover .service-num { color: var(--accent-light); }
-  .service-name {
-    font-family: var(--serif);
-    font-size: 1.4rem; font-weight: 500;
-    margin-bottom: 0.75rem;
-  }
-  .service-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
-  .service-price {
-    font-size: 0.8rem; font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-  }
-  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-  .tag {
-    font-size: 0.7rem; padding: 0.25rem 0.6rem;
-    background: var(--paper); color: var(--muted);
-    border-radius: 2px; letter-spacing: 0.04em;
+  .divider span{width:64px;height:1px;background:rgba(212,175,55,0.2);}
+  .divider .mark{
+    width:8px;height:8px;border:1px solid var(--gold);transform:rotate(45deg);
   }
 
-  /* ─── PORTFOLIO ─── */
-  #portfolio { background: var(--paper); }
-  .portfolio-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; margin-top: 3rem; }
-  .portfolio-item {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .portfolio-item:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
-  .portfolio-img {
-    width: 100%; aspect-ratio: 16/9;
-    background: linear-gradient(135deg, #e8d5c4 0%, #d4b9a5 50%, #c8a88e 100%);
-    position: relative; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .portfolio-img-2 { background: linear-gradient(135deg, #d4c9bc 0%, #c0b5a8 50%, #b4a89a 100%); }
-  .portfolio-img-mockup {
-    width: 72%; height: 80%;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    display: flex; flex-direction: column; overflow: hidden;
-  }
-  .mockup-bar { height: 28px; background: #f0ede8; border-bottom: 1px solid #e0ddd8; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
-  .mockup-dot { width: 7px; height: 7px; border-radius: 50%; }
-  .mockup-body { flex: 1; padding: 12px; }
-  .mockup-hero-block { height: 40%; background: #f7f4ef; border-radius: 2px; margin-bottom: 8px; }
-  .mockup-row { display: flex; gap: 6px; margin-bottom: 6px; }
-  .mockup-block { background: #ede9e3; border-radius: 2px; }
-  .portfolio-info { padding: 1.5rem 2rem 2rem; }
-  .portfolio-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
-  .portfolio-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; }
-  .portfolio-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
-  .portfolio-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-  .portfolio-review {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    padding: 2rem;
-    margin-top: 0.5rem;
-    display: flex; align-items: flex-start; gap: 1rem;
-  }
-  .stars { color: #e8a84c; font-size: 0.9rem; letter-spacing: 2px; }
-  .review-text { font-size: 0.875rem; color: var(--muted); font-style: italic; line-height: 1.7; }
-  .review-name { font-size: 0.8rem; font-weight: 500; color: var(--ink); margin-top: 0.5rem; }
+  section{padding:100px 0;}
+  .eyebrow-sm{font-size:0.75rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;font-weight:500;}
+  h2{font-family:var(--serif);font-size:2.6rem;font-weight:500;margin-bottom:20px;letter-spacing:0.5px;}
+  .section-intro{color:var(--muted);max-width:580px;margin-bottom:56px;font-size:1.05rem;}
 
-  /* ─── PROCESS ─── */
-  #process { background: var(--ink); color: var(--white); }
-  #process .section-label { color: #c8a88e; }
-  #process .section-label::before { background: #c8a88e; }
-  #process .section-title { color: var(--white); }
-  #process .section-sub { color: rgba(255,255,255,0.5); }
-  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4rem; border: 1px solid rgba(255,255,255,0.1); }
-  .process-step {
-    padding: 2.5rem;
-    border-right: 1px solid rgba(255,255,255,0.1);
-    position: relative;
-  }
-  .process-step:last-child { border-right: none; }
-  .step-num {
-    font-family: var(--serif);
-    font-size: 4rem; font-weight: 400;
-    color: rgba(255,255,255,0.08); line-height: 1;
-    margin-bottom: 1.5rem;
-  }
-  .step-title { font-family: var(--serif); font-size: 1.2rem; color: var(--white); margin-bottom: 0.75rem; }
-  .step-desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start;}
+  .about-grid p{color:var(--muted);margin-bottom:20px;font-size:1rem;line-height:1.7;}
+  .signature-line{font-family:var(--serif);color:var(--gold);font-size:1.4rem;margin-top:32px;letter-spacing:1px;font-style:italic;}
 
-  /* ─── PRICING ─── */
-  #pricing { background: var(--paper); }
-  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-  .pricing-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2.5rem;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+  .service-card{
+    background:var(--card);border:1px solid var(--card-border);padding:40px;border-radius:3px;
+    transition:border-color .3s, transform .3s;
   }
-  .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
-  .pricing-card.featured {
-    background: var(--ink);
-    border-color: var(--ink);
-  }
-  .featured-label {
-    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-    background: var(--accent); color: var(--white);
-    font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 0.3rem 1rem; border-radius: 2px;
-    white-space: nowrap;
-  }
-  .pricing-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; }
-  .pricing-card.featured .pricing-name { color: var(--white); }
-  .pricing-price {
-    font-family: var(--serif);
-    font-size: 3rem; font-weight: 600;
-    line-height: 1; margin: 1rem 0 0.25rem;
-  }
-  .pricing-card.featured .pricing-price { color: var(--white); }
-  .pricing-from { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
-  .pricing-card.featured .pricing-from { color: rgba(255,255,255,0.45); }
-  .pricing-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
-  .pricing-card.featured .pricing-divider { background: rgba(255,255,255,0.1); }
-  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
-  .pricing-features li {
-    font-size: 0.875rem; color: var(--muted);
-    display: flex; align-items: flex-start; gap: 0.6rem;
-  }
-  .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.6); }
-  .pricing-features li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
-  .btn-pricing {
-    display: block; text-align: center;
-    padding: 0.85rem; border-radius: 2px;
-    font-size: 0.875rem; font-weight: 500;
-    text-decoration: none;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    transition: all 0.25s;
-  }
-  .btn-pricing-light {
-    background: var(--paper); color: var(--ink);
-    border: 1px solid var(--border);
-  }
-  .btn-pricing-light:hover { background: var(--ink); color: var(--white); }
-  .btn-pricing-dark {
-    background: var(--accent); color: var(--white);
-  }
-  .btn-pricing-dark:hover { background: #b5561f; }
-  .pricing-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
-  .pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.5); }
+  .service-card:hover{border-color:rgba(212,175,55,0.4);transform:translateY(-4px);}
+  .service-card .num{font-family:var(--serif);color:var(--gold);font-size:1.1rem;letter-spacing:2px;margin-bottom:18px;display:block;}
+  .service-card h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:12px;font-weight:500;}
+  .service-card p{color:var(--muted);font-size:0.95rem;line-height:1.6;}
 
-  /* ─── CONTACT ─── */
-  #contact { background: var(--white); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; margin-top: 3rem; }
-  .contact-info h3 { font-family: var(--serif); font-size: 1.8rem; margin-bottom: 1rem; }
-  .contact-info p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 0.75rem;
-    text-decoration: none; color: var(--ink);
-    font-size: 0.9rem; font-weight: 400;
-    padding-bottom: 1rem; border-bottom: 1px solid var(--border);
-    transition: color 0.2s;
+  /* PACKAGES */
+  .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .package{
+    background:var(--card);border:1px solid var(--card-border);border-radius:3px;
+    padding:44px 32px;display:flex;flex-direction:column;
+    position:relative;
+    transition:transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
-  .contact-link:hover { color: var(--accent); }
-  .contact-link-icon {
-    width: 36px; height: 36px; border-radius: 2px;
-    background: var(--paper); border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.9rem; flex-shrink: 0;
+  .package:hover {
+    transform: translateY(-4px);
   }
-  form { display: flex; flex-direction: column; gap: 1.2rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-  label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-  input, select, textarea {
-    background: var(--paper); border: 1px solid var(--border);
-    border-radius: 2px; padding: 0.85rem 1rem;
-    font-family: var(--sans); font-size: 0.9rem; color: var(--ink);
-    outline: none; transition: border-color 0.2s;
-    width: 100%;
+  .package.featured{border-color:var(--gold);background:linear-gradient(180deg, #161616 0%, #121212 100%);}
+  .package.featured::before{
+    content:'MOST BOOKED';position:absolute;top:-1px;right:-1px;
+    background:var(--gold);color:#0A0A0A;font-size:0.65rem;letter-spacing:1.5px;
+    padding:6px 14px;font-weight:600;border-radius:0 2px 0 0;
   }
-  input:focus, select:focus, textarea:focus { border-color: var(--accent); }
-  textarea { resize: vertical; min-height: 120px; }
-  select { appearance: none; cursor: pointer; }
+  .package h3{font-family:var(--serif);font-size:1.6rem;margin-bottom:8px;font-weight:500;}
+  .package .tagline{color:var(--muted);font-size:0.88rem;margin-bottom:24px;}
+  .package .price{font-family:var(--serif);font-size:2.4rem;color:var(--gold);margin-bottom:4px;font-weight:500;}
+  .package .price-note{color:var(--muted);font-size:0.8rem;margin-bottom:28px;text-transform:uppercase;letter-spacing:1px;}
+  .package ul{list-style:none;margin-bottom:36px;flex-grow:1;}
+  .package li{
+    font-size:0.9rem;color:var(--text);padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.04);
+    display:flex;gap:12px;align-items:center;
+  }
+  .package li::before{content:'—';color:var(--gold);font-weight:bold;}
+  .package .btn{justify-content:center;width:100%;}
 
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--ink); color: rgba(255,255,255,0.5);
-    padding: 3rem 5%;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1rem;
+  /* PROCESS */
+  .process{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  .process-step{text-align:left;}
+  .process-step .label{
+    font-family:var(--serif);font-size:2rem;color:var(--gold);margin-bottom:14px;letter-spacing:1px;font-style:italic;
   }
-  .footer-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--white); }
-  .footer-logo span { color: #c8a88e; }
-  .footer-links { display: flex; gap: 2rem; list-style: none; }
-  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--white); }
-  .footer-copy { font-size: 0.8rem; }
+  .process-step h4{font-size:1.1rem;margin-bottom:10px;font-weight:600;letter-spacing:0.3px;}
+  .process-step p{color:var(--muted);font-size:0.92rem;line-height:1.6;}
 
-  /* ─── FADE IN ─── */
-  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  /* CONTACT */
+  .contact{
+    text-align:center;background:radial-gradient(circle at center, rgba(212,175,55,0.04), transparent 60%);
+    padding:120px 0;
+  }
+  .contact h2{font-size:3rem;}
+  .contact p{color:var(--muted);max-width:520px;margin:0 auto 40px;font-size:1.05rem;}
 
-  /* ─── RESPONSIVE ─── */
-  @media(max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: 7rem; }
-    .hero-visual { display: none; }
-    .services-header { grid-template-columns: 1fr; gap: 1rem; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
-    .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .process-step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
-    .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
+  footer{
+    border-top:1px solid rgba(212,175,55,0.08);
+    padding:40px 0;text-align:center;color:var(--muted);font-size:0.85rem;
   }
-  @media(max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .process-steps { grid-template-columns: 1fr; }
-    .process-step { border-right: none !important; }
-    .form-row { grid-template-columns: 1fr; }
-  }
+  footer .foot-tag{color:var(--gold);letter-spacing:3px;font-size:0.8rem;margin-bottom:12px;font-weight:500;}
 
-  /* Mobile nav overlay */
-  .mobile-nav {
-    display: none;
-    position: fixed; inset: 0; z-index: 99;
-    background: var(--paper);
-    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
-  }
-  .mobile-nav.open { display: flex; }
-  .mobile-nav a {
-    font-family: var(--serif); font-size: 2.5rem; font-weight: 500;
-    color: var(--ink); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .mobile-nav a:hover { color: var(--accent); }
-  .mobile-close {
-    position: absolute; top: 1.5rem; right: 5%;
-    background: none; border: none; cursor: pointer;
-    font-size: 1.5rem; color: var(--ink);
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    h1{font-size:2.6rem;}
+    section{padding:70px 0;}
+    .about-grid,.services-grid,.packages-grid,.process{grid-template-columns:1fr;gap:40px;}
+    .package.featured{order:-1;}
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Ecom <span>Sam</span></a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Work</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-  </ul>
-  <div class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
+<header>
+  <nav>
+    <div class="logo">PEMZ OFFICIAL<span>AGENCY</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#process">Process</a>
+    </div>
+    <a class="nav-cta" id="navCta" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </nav>
+</header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav">
-  <button class="mobile-close" onclick="document.querySelector('.mobile-nav').classList.remove('open')">✕</button>
-  <a href="#services" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Services</a>
-  <a href="#portfolio" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Work</a>
-  <a href="#pricing" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Pricing</a>
-  <a href="#contact" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Hire Me</a>
-</div>
-
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-content fade-up">
-    <div class="hero-eyebrow">Shopify & Email Expert</div>
-    <h1>Your store, <em>built to sell.</em></h1>
-    <p class="hero-sub">I design and build high-converting Shopify stores, set up Klaviyo email flows, and automate your backend — so you can focus on growing your brand.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Start a Project</a>
-      <a href="#portfolio" class="btn-secondary">See My Work →</a>
+  <div class="wrap hero-inner fade-up">
+    <div class="eyebrow">Premium Shopify Ecosystems. Built for Global Scaling.</div>
+    <h1>Building brands that <em>stand out</em> online.</h1>
+    <p class="lead">I help business owners turn their ideas into stores and brands that look credible, feel premium, and actually sell — branding, Shopify, websites and marketing, done right.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Chat on WhatsApp →</a>
+      <a class="btn btn-ghost" href="#packages">View Packages</a>
     </div>
-  </div>
-  <div class="hero-visual fade-up" style="animation-delay:0.2s">
-    <div class="hero-card">
-      <div class="hero-card-tag">Recent Project</div>
-      <div class="hero-card-title">Fleeceera Store</div>
-      <div class="hero-card-sub">Full Shopify build · Horizon theme · Pinterest Ads</div>
-      <div class="hero-card-stats">
-        <div class="stat">
-          <div class="stat-num">5★</div>
-          <div class="stat-label">Client review</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">14d</div>
-          <div class="stat-label">Delivery time</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Satisfaction</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">4+</div>
-          <div class="stat-label">Platforms set up</div>
-        </div>
-      </div>
-      <div class="hero-badge">Available for Projects</div>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
   </div>
 </section>
 
-<!-- SERVICES -->
+<div class="divider"><span></span><div class="mark"></div><span></span></div>
+
+<section id="about">
+  <div class="wrap about-grid fade-up">
+    <div>
+      <div class="eyebrow-sm">About</div>
+      <h2>Hi, I'm Pemu Samuel.</h2>
+    </div>
+    <div>
+      <p>I'm the founder of Pemz Official Agency, a one-person studio covering brand identity, Shopify stores, websites and marketing.</p>
+      <p>I started this agency on one simple belief: real growth comes from trust, not shortcuts. Every project I take — a logo, a store, a website, or a marketing plan — is built to make your business look credible and actually grow online.</p>
+      <p>I work closely with each client, no big team, no middlemen — just direct, honest work focused on results.</p>
+      <div class="signature-line">Learn • Build • Grow</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span></span><div class="mark"></div><span></span></div>
+
 <section id="services">
-  <div class="services-header fade-up">
-    <div>
-      <div class="section-label">What I Do</div>
-      <h2 class="section-title">End-to-end eCommerce services</h2>
-    </div>
-    <p class="section-sub">From store setup to email automation and paid ads — everything you need to launch and grow a professional online store.</p>
-  </div>
-  <div class="services-grid fade-up">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-name">Shopify Store Design</div>
-      <p class="service-desc">Full store setup and design using premium themes. I build stores that look professional, load fast, and are built to convert visitors into buyers.</p>
-      <div class="service-price">Starting from $400</div>
-      <div class="service-tags">
-        <span class="tag">Theme Setup</span>
-        <span class="tag">Product Import</span>
-        <span class="tag">Mobile Optimized</span>
+  <div class="wrap fade-up">
+    <div class="eyebrow-sm">What I Do</div>
+    <h2>Services</h2>
+    <p class="section-intro">Everything your brand needs to look right and sell well, under one roof.</p>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <span class="num">01</span>
+        <h3>Brand Identity</h3>
+        <p>Logos, colors, and a visual identity that makes your business instantly recognizable and trustworthy.</p>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-name">Klaviyo Email Marketing</div>
-      <p class="service-desc">Abandoned cart recovery, welcome sequences, post-purchase flows — I set up automated emails that run 24/7 and bring back lost revenue.</p>
-      <div class="service-price">Starting from $250</div>
-      <div class="service-tags">
-        <span class="tag">Abandoned Cart</span>
-        <span class="tag">Welcome Flow</span>
-        <span class="tag">Segmentation</span>
+      <div class="service-card fade-up">
+        <span class="num">02</span>
+        <h3>Shopify Stores</h3>
+        <p>Clean, fast, easy-to-use stores built to turn visitors into paying customers.</p>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-name">Pinterest Ads Setup</div>
-      <p class="service-desc">Pinterest is one of the best traffic sources for eCommerce. I set up your business account, ad creatives, and first campaigns to drive qualified buyers.</p>
-      <div class="service-price">Starting from $200</div>
-      <div class="service-tags">
-        <span class="tag">Business Account</span>
-        <span class="tag">Ad Creatives</span>
-        <span class="tag">Campaign Setup</span>
+      <div class="service-card fade-up">
+        <span class="num">03</span>
+        <h3>Website Development</h3>
+        <p>Responsive, premium-feel websites that represent your brand properly online.</p>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <div class="service-name">Store Customization</div>
-      <p class="service-desc">Already have a Shopify store but need design fixes, new sections, or better branding? I'll clean it up and make it look exactly how you want.</p>
-      <div class="service-price">Starting from $150</div>
-      <div class="service-tags">
-        <span class="tag">UI Fixes</span>
-        <span class="tag">Branding</span>
-        <span class="tag">Section Edits</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">05</div>
-      <div class="service-name">Workflow Automation</div>
-      <p class="service-desc">I automate your backend with n8n, Zapier, and Make — so orders, emails, and customer data flow automatically without you lifting a finger.</p>
-      <div class="service-price">Starting from $300</div>
-      <div class="service-tags">
-        <span class="tag">n8n</span>
-        <span class="tag">Zapier</span>
-        <span class="tag">Make</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <div class="service-name">Full Store Package</div>
-      <p class="service-desc">Everything in one: store design, product setup, Klaviyo flows, Pinterest ads, and automation. The complete launch package for serious brands.</p>
-      <div class="service-price">Starting from $900</div>
-      <div class="service-tags">
-        <span class="tag">All-in-One</span>
-        <span class="tag">Priority Support</span>
-        <span class="tag">Launch Ready</span>
+      <div class="service-card fade-up">
+        <span class="num">04</span>
+        <h3>Marketing & Growth</h3>
+        <p>The right strategy, content and setup to keep customers finding and choosing you.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="fade-up">
-    <div class="section-label">My Work</div>
-    <h2 class="section-title">Recent projects</h2>
-    <p class="section-sub">Every store is built with care — clean design, fast performance, and a brand identity that sticks.</p>
-  </div>
-  <div class="portfolio-grid fade-up">
-    <div>
-      <div class="portfolio-item">
-        <div class="portfolio-img">
-          <div class="portfolio-img-mockup">
-            <div class="mockup-bar">
-              <div class="mockup-dot" style="background:#e8b4a0"></div>
-              <div class="mockup-dot" style="background:#e8caba"></div>
-              <div class="mockup-dot" style="background:#c8b4a0"></div>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-hero-block"></div>
-              <div class="mockup-row">
-                <div class="mockup-block" style="flex:1;height:50px"></div>
-                <div class="mockup-block" style="flex:1;height:50px"></div>
-                <div class="mockup-block" style="flex:1;height:50px"></div>
-              </div>
-              <div class="mockup-block" style="width:60%;height:8px;margin-bottom:6px"></div>
-              <div class="mockup-block" style="width:40%;height:8px"></div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-label">Shopify Store Build</div>
-          <div class="portfolio-name">Fleeceera</div>
-          <p class="portfolio-desc">Full store build using the Horizon theme with a warm cozy brand identity — caramel, beige, and cream palette. Included product imports via Teemdrop and Pinterest ads setup.</p>
-          <div class="portfolio-tags">
-            <span class="tag">Horizon Theme</span>
-            <span class="tag">Teemdrop</span>
-            <span class="tag">Pinterest Ads</span>
-            <span class="tag">Brand Identity</span>
-          </div>
-        </div>
+<div class="divider"><span></span><div class="mark"></div><span></span></div>
+
+<section id="packages">
+  <div class="wrap fade-up">
+    <div class="eyebrow-sm">Packages</div>
+    <h2>Pick what fits where you are</h2>
+    <p class="section-intro">Simple pricing, clear deliverables. No hidden extras — just real value for your business.</p>
+    <div class="packages-grid">
+
+      <div class="package fade-up">
+        <h3>Starter</h3>
+        <div class="tagline">For new businesses getting online</div>
+        <div class="price">$499</div>
+        <div class="price-note">one-time</div>
+        <ul>
+          <li>Logo + basic brand colors</li>
+          <li>1-page Shopify or website setup</li>
+          <li>Mobile-friendly design</li>
+          <li>2 rounds of revisions</li>
+          <li>5 working days delivery</li>
+        </ul>
+        <a class="btn btn-ghost whatsapp-link" href="#" target="_blank" rel="noopener">Choose Starter</a>
       </div>
-      <div class="portfolio-review">
-        <div>
-          <div class="stars">★★★★★</div>
-          <p class="review-text">"Excellent work — the store looks exactly how I imagined it. Very professional, delivered on time, and went above and beyond with the branding details."</p>
-          <div class="review-name">— Fleeceera Client · Fiverr</div>
-        </div>
+
+      <div class="package featured fade-up">
+        <h3>Growth</h3>
+        <div class="tagline">For brands ready to sell seriously</div>
+        <div class="price">$1,299</div>
+        <div class="price-note">one-time</div>
+        <ul>
+          <li>Full brand identity kit</li>
+          <li>Full Shopify store or multi-section website</li>
+          <li>Premium responsive design</li>
+          <li>Checkout & speed optimization</li>
+          <li>Social profile graphics</li>
+          <li>3 rounds of revisions</li>
+          <li>10 working days delivery</li>
+        </ul>
+        <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Choose Growth</a>
       </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:2rem;">
-      <div class="portfolio-item">
-        <div class="portfolio-img portfolio-img-2">
-          <div class="portfolio-img-mockup">
-            <div class="mockup-bar">
-              <div class="mockup-dot" style="background:#b4c8b4"></div>
-              <div class="mockup-dot" style="background:#c8d4c8"></div>
-              <div class="mockup-dot" style="background:#a4b8a4"></div>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-hero-block" style="background:#e8ede8"></div>
-              <div class="mockup-row">
-                <div class="mockup-block" style="flex:1;height:40px;background:#d4ddd4"></div>
-                <div class="mockup-block" style="flex:1;height:40px;background:#d4ddd4"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-label">Shopify + Pinterest Ads</div>
-          <div class="portfolio-name">Craft Materials Store</div>
-          <p class="portfolio-desc">Shopify store build for a craft supplies brand. Set up Pinterest business account, ad campaigns, and Klaviyo welcome flow.</p>
-          <div class="portfolio-tags">
-            <span class="tag">Shopify</span>
-            <span class="tag">Klaviyo</span>
-            <span class="tag">Pinterest Ads</span>
-          </div>
-        </div>
+
+      <div class="package fade-up">
+        <h3>Premium</h3>
+        <div class="tagline">For established brands going all-in</div>
+        <div class="price">Custom</div>
+        <div class="price-note">based on scope</div>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Marketing & SEO setup</li>
+          <li>Google Business optimization</li>
+          <li>WhatsApp content system</li>
+          <li>1 month post-launch support</li>
+          <li>Priority delivery</li>
+        </ul>
+        <a class="btn btn-ghost whatsapp-link" href="#" target="_blank" rel="noopener">Talk About Premium</a>
       </div>
-      <div style="background:var(--ink);color:white;padding:2rem;border-radius:2px;">
-        <div style="font-family:var(--serif);font-size:1.8rem;color:#c8a88e;margin-bottom:0.5rem">Your store next?</div>
-        <p style="font-size:0.875rem;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:1.5rem">I'm currently taking on new projects. Let's talk about your store.</p>
-        <a href="#contact" class="btn-primary" style="display:inline-block">Get In Touch</a>
-      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<div class="divider"><span></span><div class="mark"></div><span></span></div>
+
 <section id="process">
-  <div class="fade-up">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title" style="color:white">Simple, clear process</h2>
-    <p class="section-sub">No confusion, no delays. Here's exactly what happens when you hire me.</p>
-  </div>
-  <div class="process-steps fade-up">
-    <div class="process-step">
-      <div class="step-num">01</div>
-      <div class="step-title">Discovery Call</div>
-      <p class="step-desc">We talk about your brand, your goals, and what you need. I ask the right questions so I can build exactly what you're looking for.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">02</div>
-      <div class="step-title">Proposal & Quote</div>
-      <p class="step-desc">I send a clear breakdown of what I'll deliver, the timeline, and the price. No surprises, no hidden fees.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">03</div>
-      <div class="step-title">Build & Review</div>
-      <p class="step-desc">I build your store and keep you updated throughout. You get to review and request changes before anything goes live.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">04</div>
-      <div class="step-title">Launch & Support</div>
-      <p class="step-desc">Your store goes live and I'm here to make sure everything runs smoothly. Post-launch support included in every project.</p>
+  <div class="wrap fade-up">
+    <div class="eyebrow-sm">How We Work</div>
+    <h2>Learn • Build • Grow</h2>
+    <p class="section-intro">A simple process, every time.</p>
+    <div class="process">
+      <div class="process-step fade-up">
+        <div class="label">Learn</div>
+        <h4>I understand your business</h4>
+        <p>We talk about your business, your customers, and what's not working yet.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="label">Build</div>
+        <h4>I design and build</h4>
+        <p>Your brand, store, or website gets built with care, with you reviewing progress along the way.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="label">Grow</div>
+        <h4>You launch and grow</h4>
+        <p>You go live with a brand that actually works for you — and you have support after launch too.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="fade-up">
-    <div class="section-label">Investment</div>
-    <h2 class="section-title">Clear, honest pricing</h2>
-    <p class="section-sub">No hidden fees. Every project gets a custom quote — but here's what you can expect to invest.</p>
-  </div>
-  <div class="pricing-grid fade-up">
-    <div class="pricing-card">
-      <div class="pricing-name">Starter</div>
-      <p class="pricing-desc">For new brands launching their first store.</p>
-      <div class="pricing-price">$400</div>
-      <div class="pricing-from">starting from</div>
-      <div class="pricing-divider"></div>
-      <ul class="pricing-features">
-        <li>Shopify theme setup & customization</li>
-        <li>Up to 20 products imported</li>
-        <li>Mobile-optimized design</li>
-        <li>Basic Klaviyo welcome flow</li>
-        <li>Payment & shipping setup</li>
-        <li>2 rounds of revisions</li>
-      </ul>
-      <a href="#contact" class="btn-pricing btn-pricing-light">Get Started</a>
-    </div>
-    <div class="pricing-card featured">
-      <div class="featured-label">Most Popular</div>
-      <div class="pricing-name">Growth</div>
-      <p class="pricing-desc">For brands ready to launch and scale seriously.</p>
-      <div class="pricing-price" style="color:#c8a88e">$750</div>
-      <div class="pricing-from">starting from</div>
-      <div class="pricing-divider"></div>
-      <ul class="pricing-features">
-        <li>Full store design + branding</li>
-        <li>Up to 50 products imported</li>
-        <li>Klaviyo flows (cart, welcome, post-purchase)</li>
-        <li>Pinterest ads setup</li>
-        <li>SEO basics configured</li>
-        <li>3 rounds of revisions</li>
-        <li>Priority support</li>
-      </ul>
-      <a href="#contact" class="btn-pricing btn-pricing-dark">Get Started</a>
-    </div>
-    <div class="pricing-card">
-      <div class="pricing-name">Complete</div>
-      <p class="pricing-desc">Everything you need — fully done for you.</p>
-      <div class="pricing-price">$900</div>
-      <div class="pricing-from">starting from</div>
-      <div class="pricing-divider"></div>
-      <ul class="pricing-features">
-        <li>Full Growth package included</li>
-        <li>Unlimited products imported</li>
-        <li>Workflow automation (n8n/Zapier)</li>
-        <li>Advanced Klaviyo segmentation</li>
-        <li>Pinterest + campaign creatives</li>
-        <li>Unlimited revisions</li>
-        <li>30-day post-launch support</li>
-      </ul>
-      <a href="#contact" class="btn-pricing btn-pricing-light">Get Started</a>
-    </div>
+<section class="contact id="contact"">
+  <div class="wrap fade-up">
+    <div class="eyebrow-sm">Get Started</div>
+    <h2>Let's build something that sells.</h2>
+    <p>Send me a message on WhatsApp and tell me about your business. I'll reply personally.</p>
+    <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Chat on WhatsApp →</a>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="fade-up">
-    <div class="section-label">Get In Touch</div>
-    <h2 class="section-title">Let's build your store</h2>
-  </div>
-  <div class="contact-grid fade-up">
-    <div class="contact-info">
-      <h3>Ready to start?</h3>
-      <p>Fill in the form and I'll get back to you within 24 hours with a clear plan and quote for your project. No pressure, no commitment.</p>
-      <div class="contact-links">
-        <a href="https://fiverr.com" target="_blank" class="contact-link">
-          <div class="contact-link-icon">F</div>
-          <span>Find me on Fiverr</span>
-        </a>
-        <a href="https://contra.com" target="_blank" class="contact-link">
-          <div class="contact-link-icon">C</div>
-          <span>View my Contra profile</span>
-        </a>
-        <a href="mailto:hello@ecomsam.com" class="contact-link">
-          <div class="contact-link-icon">@</div>
-          <span>hello@ecomsam.com</span>
-        </a>
-      </div>
-    </div>
-    <form onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Jane" required>
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Smith">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="jane@yourbrand.com" required>
-      </div>
-      <div class="form-group">
-        <label>Service Needed</label>
-        <select required>
-          <option value="" disabled selected>Select a service...</option>
-          <option>Shopify Store Design</option>
-          <option>Klaviyo Email Marketing</option>
-          <option>Pinterest Ads Setup</option>
-          <option>Store Customization</option>
-          <option>Workflow Automation</option>
-          <option>Full Store Package</option>
-          <option>Not sure — let's talk</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Budget Range</label>
-        <select>
-          <option value="" disabled selected>Select your budget...</option>
-          <option>Under $300</option>
-          <option>$300 – $600</option>
-          <option>$600 – $1,000</option>
-          <option>$1,000+</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Tell Me About Your Project</label>
-        <textarea placeholder="What are you selling? What do you need? Any details help..." required></textarea>
-      </div>
-      <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;text-align:center;padding:1rem">Send Message →</button>
-      <div id="form-success" style="display:none;background:#e1f5ee;color:#085041;padding:1rem;border-radius:2px;font-size:0.875rem;text-align:center">
-        ✓ Message sent! I'll get back to you within 24 hours.
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Ecom <span>Sam</span></div>
-  <ul class="footer-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Work</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="footer-copy">© 2025 Ecom Sam. All rights reserved.</div>
+  <div class="foot-tag">LEARN · BUILD · GROW</div>
+  <div>© <span id="year"></span> Pemz Official Agency. Premium Shopify Ecosystems.</div>
 </footer>
 
 <script>
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Form submit handler
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('form-success').style.display = 'block';
-    e.target.reset();
-    setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 5000);
-  }
+  const phone = "2349153056642";
+  const message = encodeURIComponent("Hi Pemu, I'd like to talk about a project for my brand.");
+  const waLink = `https://wa.me/${phone}?text=${message}`;
+
+  document.querySelectorAll('.whatsapp-link, #navCta').forEach(el => {
+    el.setAttribute('href', waLink);
+  });
+
+  // Premium Fade-In On Scroll Observer System
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { 
+      if(e.isIntersecting) {
+        e.target.classList.add('visible'); 
+      }
+    });
+  }, { threshold: 0.15 });
+  
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
